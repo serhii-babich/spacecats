@@ -1,0 +1,52 @@
+.navigation {
+  --position: translateX(calc(-100% - 13px));
+
+  @media (orientation: portrait) {
+    &:focus-within {
+      --position: translateX(-8px);
+    }
+  }
+
+  & .menu {
+    display: flex;
+    gap: 12px;
+    transition-duration: 200ms;
+
+    @media (orientation: portrait) {
+      background-color: #2b3a55;
+      width: 320px;
+      max-width: 90vw;
+      flex-direction: column;
+      gap: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      box-shadow: 0 5px 5px black;
+      transform: var(--position);
+
+      & a {
+        padding: 8px 16px;
+
+        &.active {
+          background-color: #3e6d9c;
+        }
+      }
+    }
+  }
+
+  & .menu-btn {
+    display: none;
+
+    font-family: inherit;
+    border-radius: 0;
+    border: 2px solid #e0e0e0;
+    padding: 4px 8px;
+    height: 32px;
+    background: unset;
+    color: #e0e0e0;
+
+    @media (orientation: portrait) {
+      display: block;
+    }
+  }
+}
